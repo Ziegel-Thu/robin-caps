@@ -1,0 +1,4 @@
+/.lake
+.axiomcheck.lean
+*.axcheck
+.DS_Store
