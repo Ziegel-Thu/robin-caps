@@ -159,3 +159,6 @@ import RobinCaps.Cap.TraceLateralMeas2
 import RobinCaps.Cap.TraceDataFlatCase
 import RobinCaps.Cap.TraceDataGen
 import RobinCaps.ThinDomain.MainGeneralFinal
+import RobinCaps.Cap.Frustum
+import RobinCaps.ThinDomain.CounterexampleGeneral
+import RobinCaps.ThinDomain.CounterexampleNearFlat

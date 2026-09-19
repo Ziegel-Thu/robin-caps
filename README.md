@@ -23,6 +23,7 @@ The main results, all proved in Lean for every dimension `n = m + 1 ≥ 2`:
 | Theorem 2.2 (every pair of caps) | `RobinCaps.mainTheorem_general_top` | `RobinCaps/ThinDomain/MainGeneralFinal.lean` |
 | Theorem 3.1 | `RobinCaps.sharp_cap_inequality_final_top`, `RobinCaps.equality_iff_final_top` | `RobinCaps/Final.lean` |
 | Corollary 8.1 | `RobinCaps.counterexample_hemisphere_top` | `RobinCaps/Final.lean` |
+| Section 9.3 (any cap with `β(C) < α`; caps close to a flat end) | `RobinCaps.counterexample_of_beta_lt_top`, `RobinCaps.counterexample_nearFlat_top` | `RobinCaps/ThinDomain/CounterexampleNearFlat.lean` |
 | Proposition 4.2 (interval gap monotone) | `RobinCaps.Interval.gap_strictMonoOn` | `RobinCaps/Interval/` |
 
 `RobinCaps/Final.lean` collects the headline statements with references to the paper.

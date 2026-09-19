@@ -300,6 +300,12 @@ import RobinCaps
 #print axioms RobinCaps.ThinDomain.exists_capTraceData_gf
 #print axioms RobinCaps.ThinDomain.mainTheorem_general_nb
 #print axioms RobinCaps.mainTheorem_general_top
+#print axioms RobinCaps.ThinDomain.gap_length_tendsto_cg
+#print axioms RobinCaps.ThinDomain.counterexample_of_beta_lt_cg
+#print axioms RobinCaps.Cap.frustum_F_lt_omega_fr
+#print axioms RobinCaps.Cap.frustum_beta_lt_fr
+#print axioms RobinCaps.counterexample_of_beta_lt_top
+#print axioms RobinCaps.counterexample_nearFlat_top
 EOF
 lake env lean .axiomcheck.lean
 rm -f .axiomcheck.lean
