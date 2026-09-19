@@ -1,5 +1,6 @@
 import RobinCaps.ThinDomain.CounterexampleGeneral
 import RobinCaps.Cap.Frustum
+import RobinCaps.Cap.PerturbedFlat
 
 /-!
 # Counterexamples close to flat ends (manuscript Section 9.3)
@@ -15,7 +16,14 @@ Entry points for the extension of `cor:counterexample` beyond hemispherical caps
   (`Cap.frustum_beta_lt_fr`, from the linearization `eq:linearization` with `κ = m/2`), hence
   give such counterexamples.
 
-Both statements assert that a trace family exists and that the conclusion holds for every trace
+* `RobinCaps.counterexample_perturbedFlat_top`: the general family of the manuscript,
+  `θ_δ = 1 − δχ` with `χ` nonnegative, nondecreasing, convex and Lipschitz on `[-K,0]`,
+  `χ(-K) = 0` (`Cap.FlatPerturbation`, `Cap.perturbedFlat`): if
+  `κ = m(χ(0) − ∫_{-K}^0 χ) > 0` then `β < α` for all small `δ > 0`
+  (`Cap.perturbedFlat_beta_lt_pf`, from the linearization for Lipschitz `χ`), hence the same
+  conclusion.
+
+All statements assert that a trace family exists and that the conclusion holds for every trace
 family, as for the other headline theorems.
 
 No `sorry`, `admit`, `axiom` or `native_decide` occurs in this file.
@@ -67,5 +75,40 @@ theorem counterexample_nearFlat_top (m : ℕ) (hm : 1 ≤ m) :
   refine ⟨δ₀, hδ₀pos, hδ₀le, fun δ hδ0 hδ1 hδ L α hL0 hα => ?_⟩
   have hβ := hlt δ hδ0 hδ1 hδ α hα
   exact ⟨hβ, counterexample_of_beta_lt_top m hm (Cap.frustum m δ hδ0 hδ1) L α hL0 hα hβ⟩
+
+/-- Manuscript Section 9.3 in full generality: for a nonnegative, nondecreasing, convex,
+Lipschitz perturbation `χ` of the flat end with `κ = m(χ(0) − ∫ χ) > 0`, there is `δ₀ > 0` such
+that for every amplitude `0 < δ < δ₀` (with `δ M ≤ 1/2`, `M` a bound for `χ`), every `L > 0` and
+every `α > 0`, the cap `θ_δ = 1 − δχ` has `β < α` and the thin domain closed by two such caps
+violates the Robin gap inequality at its true diameter for all small `R`. -/
+theorem counterexample_perturbedFlat_top (m : ℕ) (hm : 1 ≤ m) (K : ℝ) (hK : 0 < K)
+    (χ : ℝ → ℝ) {M M' : ℝ} (h : Cap.FlatPerturbation K χ M M') (hκ : 0 < Cap.kappa m K χ) :
+    ∃ δ₀ : ℝ, 0 < δ₀ ∧
+      ∀ (δ : ℝ) (hδ0 : 0 ≤ δ) (hδM : δ * M ≤ 1 / 2), 0 < δ → δ < δ₀ →
+        ∀ (L α : ℝ) (hL0 : 0 < L) (hα : 0 < α),
+          (Cap.perturbedFlat m K hK χ h δ hδ0 hδM).beta α < α ∧
+          ∃ R₀ : ℝ, ∃ hR₀ : 0 < R₀,
+            ∃ hR₀L : ((Cap.perturbedFlat m K hK χ h δ hδ0 hδM).K
+                + (Cap.perturbedFlat m K hK χ h δ hδ0 hδM).K) * R₀ ≤ L,
+            Nonempty (TraceFamily (Cap.perturbedFlat m K hK χ h δ hδ0 hδM)
+              (Cap.perturbedFlat m K hK χ h δ hδ0 hδM) L R₀) ∧
+            ∀ tdf : TraceFamily (Cap.perturbedFlat m K hK χ h δ hδ0 hδM)
+              (Cap.perturbedFlat m K hK χ h δ hδ0 hδM) L R₀,
+              ∃ R₁ : ℝ, 0 < R₁ ∧
+              ∀ (R : ℝ) (hR : 0 < R), R < R₁ →
+                ∀ (hLR : ((Cap.perturbedFlat m K hK χ h δ hδ0 hδM).K
+                    + (Cap.perturbedFlat m K hK χ h δ hδ0 hδM).K) * R < L)
+                  (hR₀' : R < R₀)
+                  (hD : 0 < euclidDiam (thinDomain (Cap.perturbedFlat m K hK χ h δ hδ0 hδM)
+                    (Cap.perturbedFlat m K hK χ h δ hδ0 hδM) L R)),
+                  lambdaThin hR hLR (tdf R hR hR₀') α 2 - lambdaThin hR hLR (tdf R hR hR₀') α 1
+                    < Interval.gap (euclidDiam (thinDomain
+                        (Cap.perturbedFlat m K hK χ h δ hδ0 hδM)
+                        (Cap.perturbedFlat m K hK χ h δ hδ0 hδM) L R)) hD α := by
+  obtain ⟨δ₀, hδ₀pos, hlt⟩ := Cap.perturbedFlat_beta_lt_pf m hm K hK χ h hκ
+  refine ⟨δ₀, hδ₀pos, fun δ hδ0 hδM hδpos hδ L α hL0 hα => ?_⟩
+  have hβ := hlt δ hδ0 hδM hδpos hδ α hα
+  exact ⟨hβ, counterexample_of_beta_lt_top m hm
+    (Cap.perturbedFlat m K hK χ h δ hδ0 hδM) L α hL0 hα hβ⟩
 
 end RobinCaps

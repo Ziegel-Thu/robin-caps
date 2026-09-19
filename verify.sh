@@ -306,6 +306,9 @@ import RobinCaps
 #print axioms RobinCaps.Cap.frustum_beta_lt_fr
 #print axioms RobinCaps.counterexample_of_beta_lt_top
 #print axioms RobinCaps.counterexample_nearFlat_top
+#print axioms RobinCaps.Cap.linearization_bound_lip_pf
+#print axioms RobinCaps.Cap.perturbedFlat_beta_lt_pf
+#print axioms RobinCaps.counterexample_perturbedFlat_top
 EOF
 lake env lean .axiomcheck.lean
 rm -f .axiomcheck.lean
