@@ -340,6 +340,25 @@ import RobinCaps
 #print axioms RobinCaps.Hausdorff.hausdorffVolume_hlin
 #print axioms RobinCaps.Hausdorff.linearImage_hlin
 #print axioms RobinCaps.Hausdorff.nearLinear_hnl
+#print axioms RobinCaps.Hausdorff.areaFormula_har
+#print axioms RobinCaps.Hausdorff.areaFormulaInj_agi
+#print axioms RobinCaps.Hausdorff.aemeasurableFderivWithin_gam
+#print axioms RobinCaps.Hausdorff.areaLintegralInj_gam
+#print axioms RobinCaps.Hausdorff.hemiToSphereLintegral_alt
+#print axioms RobinCaps.Hausdorff.hemiToSphere_scv
+#print axioms RobinCaps.Hausdorff.hemiHausdorff_sch
+#print axioms RobinCaps.Hausdorff.sphereHausdorff_shd
+#print axioms RobinCaps.Hausdorff.latChart_hasFDerivAt_lch
+#print axioms RobinCaps.Hausdorff.latChart_injOn_lch
+#print axioms RobinCaps.Hausdorff.frontier_thinDomain_tfr
+#print axioms RobinCaps.Hausdorff.frontier_thinDomainE_tfr
+#print axioms RobinCaps.Hausdorff.hausdorff_diskL_lintegral_tfr
+#print axioms RobinCaps.Hausdorff.hausdorff_diskR_lintegral_tfr
+#print axioms RobinCaps.hausdorff_eq_smul_volume_top
+#print axioms RobinCaps.areaFormula_C1_top
+#print axioms RobinCaps.areaFormula_top
+#print axioms RobinCaps.areaFormula_lintegral_top
+#print axioms RobinCaps.sphere_hausdorff_top
 EOF
 lake env lean .axiomcheck.lean
 rm -f .axiomcheck.lean

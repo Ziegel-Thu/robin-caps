@@ -183,3 +183,14 @@ import RobinCaps.Hausdorff.AreaIface
 import RobinCaps.Hausdorff.LinearImage
 import RobinCaps.Hausdorff.NearLinear
 import RobinCaps.Hausdorff.SphereIface
+import RobinCaps.Hausdorff.AreaFormula
+import RobinCaps.Hausdorff.BoundaryIface
+import RobinCaps.Hausdorff.AreaFormulaInj
+import RobinCaps.Hausdorff.AreaLintegral
+import RobinCaps.Hausdorff.GramMeasurable
+import RobinCaps.Hausdorff.SphereChartVolume
+import RobinCaps.Hausdorff.SphereChartHausdorff
+import RobinCaps.Hausdorff.SphereHausdorff
+import RobinCaps.Hausdorff.AreaFinal
+import RobinCaps.Hausdorff.LateralChart
+import RobinCaps.Hausdorff.ThinFrontier

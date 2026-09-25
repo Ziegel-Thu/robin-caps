@@ -28,6 +28,8 @@ The main results, all proved in Lean for every dimension `n = m + 1 ≥ 2`:
 | min–max values (2.2) are attained by `L²`-orthonormal weak Robin eigenfunctions in `H¹(Ω_R)` (every `j`; `j = 2` separately) | `RobinCaps.robin_eigenfunctions_top`, `RobinCaps.robin_eigenfunctions_two_top` | `RobinCaps/ThinDomain/EigenFinal.lean` |
 | Rellich–Kondrachov: `H¹(Ω_R) ↪ L²(Ω_R)` compact (also on every bounded convex open set) | `RobinCaps.rellich_thinDomain_top`, `RobinCaps.Compact.rellich_convex_final` | `RobinCaps/ThinDomain/EigenFinal.lean` |
 | the weak Robin eigenvalues, and the eigenvalues of the Robin operator (weak form), are exactly the min–max values; `λ_j → ∞` | `RobinCaps.robin_weakEigen_top`, `RobinCaps.robin_operator_spectrum_top`, `RobinCaps.lambdaThin_tendsto_top` | `RobinCaps/ThinDomain/RobinSpectrumFinal.lean` |
+| area formula for Hausdorff measure (maps `ℝ^m → ℝ^k` with injective derivative within a measurable set; `C¹` version; integral form) — not in mathlib | `RobinCaps.areaFormula_top`, `RobinCaps.areaFormula_C1_top`, `RobinCaps.areaFormula_lintegral_top` | `RobinCaps/Hausdorff/AreaFinal.lean` |
+| mathlib's sphere measure `toSphere` (used for `sphereMeasure`) is the Hausdorff measure `μH[n]` normalised to agree with Lebesgue measure on `ℝ^n` | `RobinCaps.sphere_hausdorff_top`, `RobinCaps.hausdorff_eq_smul_volume_top` | `RobinCaps/Hausdorff/AreaFinal.lean` |
 
 `RobinCaps/Final.lean` collects the headline statements with references to the paper.
 
