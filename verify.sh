@@ -369,6 +369,24 @@ import RobinCaps
 #print axioms RobinCaps.Hausdorff.boundaryHausdorff_bfin
 #print axioms RobinCaps.areaFormula_general_top
 #print axioms RobinCaps.boundaryIntegral_eq_hausdorff_top
+#print axioms RobinCaps.Hausdorff.steinerCompact_stc
+#print axioms RobinCaps.Hausdorff.steinerVolume_stv
+#print axioms RobinCaps.Hausdorff.steinerDiam_std
+#print axioms RobinCaps.Hausdorff.steinerSymm_sts
+#print axioms RobinCaps.Hausdorff.isodiametric_iso
+#print axioms RobinCaps.Hausdorff.hConstValue_hcv
+#print axioms RobinCaps.Spectrum.selfAdjointCriterion_sac
+#print axioms RobinCaps.Spectrum.laxMilgram_lmg
+#print axioms RobinCaps.ThinDomain.robinLaxMilgram_lmg
+#print axioms RobinCaps.ThinDomain.robinOp_symm_rlp
+#print axioms RobinCaps.ThinDomain.robinOp_isSelfAdjoint_rlp
+#print axioms RobinCaps.ThinDomain.robinOp_eigen_iff_rlp
+#print axioms RobinCaps.isodiametric_top
+#print axioms RobinCaps.hConst_eq_top
+#print axioms RobinCaps.stdHausdorff_eq_volume_top
+#print axioms RobinCaps.boundaryIntegral_eq_stdHausdorff_top
+#print axioms RobinCaps.robin_selfAdjoint_top
+#print axioms RobinCaps.robin_selfAdjoint_spectrum_top
 EOF
 lake env lean .axiomcheck.lean
 rm -f .axiomcheck.lean

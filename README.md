@@ -23,14 +23,16 @@ The main results, all proved in Lean for every dimension `n = m + 1 ≥ 2`:
 | Theorem 2.2 (every pair of caps) | `RobinCaps.mainTheorem_general_top` | `RobinCaps/ThinDomain/MainGeneralFinal.lean` |
 | Theorem 3.1 | `RobinCaps.sharp_cap_inequality_final_top`, `RobinCaps.equality_iff_final_top` | `RobinCaps/Final.lean` |
 | Corollary 8.1 | `RobinCaps.counterexample_hemisphere_top` | `RobinCaps/Final.lean` |
-| Section 9.3 (any cap with `β(C) < α`; caps close to a flat end) | `RobinCaps.counterexample_of_beta_lt_top`, `RobinCaps.counterexample_perturbedFlat_top`, `RobinCaps.counterexample_nearFlat_top` | `RobinCaps/ThinDomain/CounterexampleNearFlat.lean` |
+| Section 8.2 (any cap with `β(C) < α`; caps close to a flat end) | `RobinCaps.counterexample_of_beta_lt_top`, `RobinCaps.counterexample_perturbedFlat_top`, `RobinCaps.counterexample_nearFlat_top` | `RobinCaps/ThinDomain/CounterexampleNearFlat.lean` |
 | Proposition 4.2 (interval gap monotone) | `RobinCaps.Interval.gap_strictMonoOn` | `RobinCaps/Interval/` |
 | min–max values (2.2) are attained by `L²`-orthonormal weak Robin eigenfunctions in `H¹(Ω_R)` (every `j`; `j = 2` separately) | `RobinCaps.robin_eigenfunctions_top`, `RobinCaps.robin_eigenfunctions_two_top` | `RobinCaps/ThinDomain/EigenFinal.lean` |
 | Rellich–Kondrachov: `H¹(Ω_R) ↪ L²(Ω_R)` compact (also on every bounded convex open set) | `RobinCaps.rellich_thinDomain_top`, `RobinCaps.Compact.rellich_convex_final` | `RobinCaps/ThinDomain/EigenFinal.lean` |
 | the weak Robin eigenvalues, and the eigenvalues of the Robin operator (weak form), are exactly the min–max values; `λ_j → ∞` | `RobinCaps.robin_weakEigen_top`, `RobinCaps.robin_operator_spectrum_top`, `RobinCaps.lambdaThin_tendsto_top` | `RobinCaps/ThinDomain/RobinSpectrumFinal.lean` |
 | area formula for Hausdorff measure (maps `ℝ^m → ℝ^k` with injective derivative within a measurable set; `C¹` version; integral form) — not in mathlib | `RobinCaps.areaFormula_top`, `RobinCaps.areaFormula_C1_top`, `RobinCaps.areaFormula_lintegral_top` | `RobinCaps/Hausdorff/AreaFinal.lean` |
 | mathlib's sphere measure `toSphere` (used for `sphereMeasure`) is the Hausdorff measure `μH[n]` normalised to agree with Lebesgue measure on `ℝ^n` | `RobinCaps.sphere_hausdorff_top`, `RobinCaps.hausdorff_eq_smul_volume_top` | `RobinCaps/Hausdorff/AreaFinal.lean` |
-| the boundary integral of Section 2 (`boundaryIntegral`) is integration over `∂Ω_R` against the Hausdorff measure `μH[m]` normalised to agree with Lebesgue measure on `ℝ^m`; area formula without injectivity of the derivative | `RobinCaps.boundaryIntegral_eq_hausdorff_top`, `RobinCaps.areaFormula_general_top` | `RobinCaps/Hausdorff/BoundaryFinal.lean` |
+| the boundary integral of Section 2 (`boundaryIntegral`) is the surface integral over `∂Ω_R` against the standard `m`-dimensional Hausdorff measure `ℋ^m` | `RobinCaps.boundaryIntegral_eq_stdHausdorff_top` (and `boundaryIntegral_eq_hausdorff_top` for mathlib's unnormalised `μH[m]`) | `RobinCaps/Hausdorff/Wave13Final.lean`, `BoundaryFinal.lean` |
+| isodiametric inequality `\|A\| ≤ ω_m (diam A/2)^m`; mathlib's `μH[m] = (2^m/ω_m) · volume` on `ℝ^m`, so `ℋ^m := (ω_m/2^m) μH[m]` is Lebesgue measure on `ℝ^m`; area formula without injectivity of the derivative | `RobinCaps.isodiametric_top`, `RobinCaps.hConst_eq_top`, `RobinCaps.stdHausdorff_eq_volume_top`, `RobinCaps.areaFormula_general_top` | `RobinCaps/Hausdorff/Wave13Final.lean`, `BoundaryFinal.lean` |
+| the Robin Laplacian (a `LinearPMap` on `L²(Ω_R)`) is self-adjoint, and its eigenvalues are exactly the min–max values | `RobinCaps.robin_selfAdjoint_top`, `RobinCaps.robin_selfAdjoint_spectrum_top` | `RobinCaps/Hausdorff/Wave13Final.lean`, `ThinDomain/RobinLinearPMap.lean` |
 
 `RobinCaps/Final.lean` collects the headline statements with references to the paper.
 
@@ -49,6 +51,8 @@ kernel.
 | admissible boundary forms | `TraceData`, `TraceFamily` | `RobinCaps/ThinDomain/Boundary.lean`, `Eigen.lean` |
 | Sobolev space `H¹(Ω)` | `H1P` | `RobinCaps/ThinDomain/H1P.lean` |
 | Robin eigenvalue `λ_j(Ω_R; α)` (min–max) | `lambdaThin`, `lambdaPQ`, `Spectrum.minmax` | `RobinCaps/ThinDomain/Eigen.lean`, `H1PQuotient.lean`, `Spectrum/FormEngine.lean` |
+| standard Hausdorff measure `ℋ^m` | `Hausdorff.stdHausdorff` (and `Hausdorff.hConst`) | `RobinCaps/Hausdorff/Wave13Final.lean`, `AreaIface.lean` |
+| Robin Laplacian on `L²(Ω_R)` | `ThinDomain.robinOp_rlp`, `robinDomain_rlp`, `IsRobinImage_rop` | `RobinCaps/ThinDomain/RobinLinearPMap.lean`, `RobinOperator.lean` |
 | `ν_R = λ₁(B_m(R); α)` | `nuBall`, `Compact.lam1`, `Compact.bdR` | `RobinCaps/ThinDomain/NuBall.lean`, `Compact/` |
 | statement of the asymptotics | `MainTheorem` | `RobinCaps/ThinDomain/Eigen.lean` |
 | interval eigenvalues and gap | `Interval.mu`, `Interval.gap` | `RobinCaps/Interval/` |
@@ -56,11 +60,11 @@ kernel.
 
 The surface measure `ℋ^m(Γ)` is defined through the formula for surfaces of revolution rather
 than through mathlib's `hausdorffMeasure`, whose normalization on the product space
-`ℝ × EuclideanSpace ℝ (Fin m)` differs. `RobinCaps.boundaryIntegral_eq_hausdorff_top` proves that
-this definition agrees with the Hausdorff measure: on the Euclidean image of `Ω_R` in `ℝ^{m+1}`,
-`∫_{∂Ω_R} g dμH[m] = hConst m · boundaryIntegral g` for continuous `g ≥ 0`, where
-`μH[m] = hConst m • volume` on `ℝ^m` (mathlib's `μH` carries no normalizing constant; its value
-`2^m/ω_m` is not needed). Any bilinear form satisfying the `TraceData` axioms gives
+`ℝ × EuclideanSpace ℝ (Fin m)` differs. `RobinCaps.boundaryIntegral_eq_stdHausdorff_top` proves
+that this definition is the standard Hausdorff measure: on the Euclidean image of `Ω_R` in
+`ℝ^{m+1}`, `∫_{∂Ω_R} g dℋ^m = boundaryIntegral g` for continuous `g ≥ 0`, where
+`ℋ^m = (ω_m/2^m) μH[m]` (mathlib's `μH` carries no normalizing constant; `RobinCaps.hConst_eq_top`
+computes it via the isodiametric inequality). Any bilinear form satisfying the `TraceData` axioms gives
 the same Robin eigenvalues (`ThinDomain/TraceUnique.lean`), so the results do not depend on a
 particular construction of the trace.
 

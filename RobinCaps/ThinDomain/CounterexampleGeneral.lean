@@ -9,7 +9,7 @@ import RobinCaps.Domain.ThinDiam
 (`counterexample_of_mainTheorem'`) only for the *hemispherical* end caps, where the true
 Euclidean diameter of the thin domain happens to equal `L` exactly
 (`Domain.euclidDiam_thinDomain_hemisphere`). This file generalizes the mechanism (manuscript
-`sec:9.3`) to **any** admissible cap `C : Cap m` with sub-critical effective coefficient
+`sec:nearflat`, Section 8.2) to **any** admissible cap `C : Cap m` with sub-critical effective coefficient
 `β(C,α) < α`, comparing against the interval gap evaluated at the *true* diameter of the thin
 domain `Ω_R`, which for a general cap only satisfies the two-sided bound `eq:diam-bound`
 `L ≤ diam Ω_R ≤ √(L² + 4R²) ≤ L + 2R²/L` (`Domain.euclidDiam_thinDomain_bounds`), not an exact
@@ -99,7 +99,7 @@ theorem gap_length_tendsto_cg (L α : ℝ) (hL : 0 < L) (hα : 0 < α) :
 coefficient.**
 
 Let `C : Cap m` be any admissible cap with `β(C,α) < α`, and attach two copies of `C` as the two
-end caps of the thin domain (manuscript `sec:9.3`). Assuming only `thm:main`
+end caps of the thin domain (manuscript `sec:nearflat`, Section 8.2). Assuming only `thm:main`
 (`mainTheorem_general_nb`, proved unconditionally in `MainGeneralFinal.lean` for every pair of
 admissible caps), for all sufficiently small `R` the genuine Robin eigenvalues of the thin domain
 violate the conjectured gap bound at the *true* Euclidean diameter of `Ω_R`:

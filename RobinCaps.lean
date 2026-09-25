@@ -199,3 +199,15 @@ import RobinCaps.Hausdorff.LateralPiece
 import RobinCaps.Hausdorff.ProfileRegularity
 import RobinCaps.Hausdorff.LateralSurface
 import RobinCaps.Hausdorff.BoundaryFinal
+import RobinCaps.Hausdorff.IsodiamIface
+import RobinCaps.Hausdorff.SteinerCompact
+import RobinCaps.Hausdorff.SteinerVolume
+import RobinCaps.Hausdorff.SteinerDiam
+import RobinCaps.Hausdorff.SteinerSymm
+import RobinCaps.Hausdorff.Isodiametric
+import RobinCaps.Hausdorff.HConstValue
+import RobinCaps.ThinDomain.SelfAdjointIface
+import RobinCaps.Spectrum.SelfAdjointCriterion
+import RobinCaps.ThinDomain.RobinLaxMilgram
+import RobinCaps.ThinDomain.RobinLinearPMap
+import RobinCaps.Hausdorff.Wave13Final

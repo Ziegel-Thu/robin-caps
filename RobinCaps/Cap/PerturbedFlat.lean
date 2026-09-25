@@ -3,7 +3,7 @@ import RobinCaps.Cap.Basic
 import RobinCaps.Cap.Checks
 
 /-!
-# A general flat-cap perturbation (paper Section 9.3)
+# A general flat-cap perturbation (paper Section 8.2)
 
 This file generalizes `RobinCaps/Cap/Frustum.lean` from the linear profile
 `χ(s) = s + 1` to an arbitrary nonnegative, nondecreasing, convex, Lipschitz
@@ -362,7 +362,7 @@ theorem linearization_bound_lip_pf (m : ℕ) (hm : 1 ≤ m) (K : ℝ) (hK : 0 < 
 /-! ## Part 2: the perturbed-flat cap -/
 
 /-- The hypotheses on `χ` making `θ_δ = 1 - δ·χ` an admissible perturbation of the
-flat cap (paper Section 9.3): `χ` is continuous, vanishes at the entrance, is
+flat cap (paper Section 8.2): `χ` is continuous, vanishes at the entrance, is
 nonnegative, nondecreasing and convex on `[-K,0]`, and `M`, `M'` are sup-bounds
 for `χ` and `deriv χ` used in the linearization estimate of Part 1. -/
 structure FlatPerturbation (K : ℝ) (χ : ℝ → ℝ) (M M' : ℝ) : Prop where
@@ -447,7 +447,7 @@ theorem perturbedFlat_F_eq_pf (m : ℕ) (K : ℝ) (hK : 0 < K) (χ : ℝ → ℝ
 /-- **The perturbed-flat cap's effective end coefficient `β(C_δ)` is strictly
 below `α` for all small amplitudes `0 < δ < δ₀`**, provided the linearized
 coefficient `κ = m(χ(0) - ∫_{-K}^0 χ)` is positive.  This is the paper's
-headline claim of Section 9.3 in explicit form. -/
+headline claim of Section 8.2 in explicit form. -/
 theorem perturbedFlat_beta_lt_pf (m : ℕ) (hm : 1 ≤ m) (K : ℝ) (hK : 0 < K) (χ : ℝ → ℝ)
     {M M' : ℝ} (h : FlatPerturbation K χ M M') (hκ : 0 < kappa m K χ) :
     ∃ δ₀ : ℝ, 0 < δ₀ ∧ ∀ (δ : ℝ) (hδ0 : 0 ≤ δ) (hδM : δ * M ≤ 1 / 2),

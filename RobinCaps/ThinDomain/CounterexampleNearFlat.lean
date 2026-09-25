@@ -3,7 +3,7 @@ import RobinCaps.Cap.Frustum
 import RobinCaps.Cap.PerturbedFlat
 
 /-!
-# Counterexamples close to flat ends (manuscript Section 9.3)
+# Counterexamples close to flat ends (manuscript Section 8.2)
 
 Entry points for the extension of `cor:counterexample` beyond hemispherical caps.
 
@@ -35,7 +35,7 @@ namespace RobinCaps
 
 open Cap Domain ThinDomain
 
-/-- Manuscript Section 9.3, general form: any admissible cap with `β(C) < α` gives a strict
+/-- Manuscript Section 8.2, general form: any admissible cap with `β(C) < α` gives a strict
 reverse inequality at the true diameter, for all small `R` and every trace family. -/
 theorem counterexample_of_beta_lt_top (m : ℕ) (hm : 1 ≤ m) (C : Cap m) (L α : ℝ)
     (hL0 : 0 < L) (hα : 0 < α) (hβ : C.beta α < α) :
@@ -49,7 +49,7 @@ theorem counterexample_of_beta_lt_top (m : ℕ) (hm : 1 ≤ m) (C : Cap m) (L α
               < Interval.gap (euclidDiam (thinDomain C C L R)) hD α :=
   ThinDomain.counterexample_of_beta_lt_cg m hm C L α hL0 hα hβ
 
-/-- Manuscript Section 9.3, caps close to a flat end: there is `δ₀ > 0` such that for every
+/-- Manuscript Section 8.2, caps close to a flat end: there is `δ₀ > 0` such that for every
 amplitude `0 < δ < δ₀`, every `L > 0` and every `α > 0`, the thin domain closed by two frustum
 caps `θ_δ(s) = 1 − δ(s+1)` violates the Robin gap inequality at its true diameter for all
 small `R`. -/
@@ -76,7 +76,7 @@ theorem counterexample_nearFlat_top (m : ℕ) (hm : 1 ≤ m) :
   have hβ := hlt δ hδ0 hδ1 hδ α hα
   exact ⟨hβ, counterexample_of_beta_lt_top m hm (Cap.frustum m δ hδ0 hδ1) L α hL0 hα hβ⟩
 
-/-- Manuscript Section 9.3 in full generality: for a nonnegative, nondecreasing, convex,
+/-- Manuscript Section 8.2 in full generality: for a nonnegative, nondecreasing, convex,
 Lipschitz perturbation `χ` of the flat end with `κ = m(χ(0) − ∫ χ) > 0`, there is `δ₀ > 0` such
 that for every amplitude `0 < δ < δ₀` (with `δ M ≤ 1/2`, `M` a bound for `χ`), every `L > 0` and
 every `α > 0`, the cap `θ_δ = 1 − δχ` has `β < α` and the thin domain closed by two such caps
