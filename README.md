@@ -30,6 +30,7 @@ The main results, all proved in Lean for every dimension `n = m + 1 ≥ 2`:
 | the weak Robin eigenvalues, and the eigenvalues of the Robin operator (weak form), are exactly the min–max values; `λ_j → ∞` | `RobinCaps.robin_weakEigen_top`, `RobinCaps.robin_operator_spectrum_top`, `RobinCaps.lambdaThin_tendsto_top` | `RobinCaps/ThinDomain/RobinSpectrumFinal.lean` |
 | area formula for Hausdorff measure (maps `ℝ^m → ℝ^k` with injective derivative within a measurable set; `C¹` version; integral form) — not in mathlib | `RobinCaps.areaFormula_top`, `RobinCaps.areaFormula_C1_top`, `RobinCaps.areaFormula_lintegral_top` | `RobinCaps/Hausdorff/AreaFinal.lean` |
 | mathlib's sphere measure `toSphere` (used for `sphereMeasure`) is the Hausdorff measure `μH[n]` normalised to agree with Lebesgue measure on `ℝ^n` | `RobinCaps.sphere_hausdorff_top`, `RobinCaps.hausdorff_eq_smul_volume_top` | `RobinCaps/Hausdorff/AreaFinal.lean` |
+| the boundary integral of Section 2 (`boundaryIntegral`) is integration over `∂Ω_R` against the Hausdorff measure `μH[m]` normalised to agree with Lebesgue measure on `ℝ^m`; area formula without injectivity of the derivative | `RobinCaps.boundaryIntegral_eq_hausdorff_top`, `RobinCaps.areaFormula_general_top` | `RobinCaps/Hausdorff/BoundaryFinal.lean` |
 
 `RobinCaps/Final.lean` collects the headline statements with references to the paper.
 
@@ -55,7 +56,11 @@ kernel.
 
 The surface measure `ℋ^m(Γ)` is defined through the formula for surfaces of revolution rather
 than through mathlib's `hausdorffMeasure`, whose normalization on the product space
-`ℝ × EuclideanSpace ℝ (Fin m)` differs. Any bilinear form satisfying the `TraceData` axioms gives
+`ℝ × EuclideanSpace ℝ (Fin m)` differs. `RobinCaps.boundaryIntegral_eq_hausdorff_top` proves that
+this definition agrees with the Hausdorff measure: on the Euclidean image of `Ω_R` in `ℝ^{m+1}`,
+`∫_{∂Ω_R} g dμH[m] = hConst m · boundaryIntegral g` for continuous `g ≥ 0`, where
+`μH[m] = hConst m • volume` on `ℝ^m` (mathlib's `μH` carries no normalizing constant; its value
+`2^m/ω_m` is not needed). Any bilinear form satisfying the `TraceData` axioms gives
 the same Robin eigenvalues (`ThinDomain/TraceUnique.lean`), so the results do not depend on a
 particular construction of the trace.
 

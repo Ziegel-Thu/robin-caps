@@ -359,6 +359,16 @@ import RobinCaps
 #print axioms RobinCaps.areaFormula_top
 #print axioms RobinCaps.areaFormula_lintegral_top
 #print axioms RobinCaps.sphere_hausdorff_top
+#print axioms RobinCaps.Hausdorff.areaFormulaGen_agg
+#print axioms RobinCaps.Hausdorff.latPiece_lintegral_lpc
+#print axioms RobinCaps.Hausdorff.ae_hasDerivAt_profile_prg
+#print axioms RobinCaps.Hausdorff.hausdorff_latChart_null_prg
+#print axioms RobinCaps.Hausdorff.ofReal_lateralIntegral_prg
+#print axioms RobinCaps.Hausdorff.lateral_hausdorff_core_lsf
+#print axioms RobinCaps.Hausdorff.lateral_hausdorff_lsf
+#print axioms RobinCaps.Hausdorff.boundaryHausdorff_bfin
+#print axioms RobinCaps.areaFormula_general_top
+#print axioms RobinCaps.boundaryIntegral_eq_hausdorff_top
 EOF
 lake env lean .axiomcheck.lean
 rm -f .axiomcheck.lean

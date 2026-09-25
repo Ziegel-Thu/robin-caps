@@ -194,3 +194,8 @@ import RobinCaps.Hausdorff.SphereHausdorff
 import RobinCaps.Hausdorff.AreaFinal
 import RobinCaps.Hausdorff.LateralChart
 import RobinCaps.Hausdorff.ThinFrontier
+import RobinCaps.Hausdorff.AreaFormulaGen
+import RobinCaps.Hausdorff.LateralPiece
+import RobinCaps.Hausdorff.ProfileRegularity
+import RobinCaps.Hausdorff.LateralSurface
+import RobinCaps.Hausdorff.BoundaryFinal
