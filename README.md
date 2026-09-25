@@ -2,27 +2,27 @@
 
 A Lean 4 / mathlib formalization of the paper
 
-> Shurui Zheng, *End caps, effective Robin conditions, and a counterexample to the Robin
+> Shurui Zheng, *A counterexample to the Robin
 > spectral gap conjecture* (arXiv link to be added).
 
 The main results, all proved in Lean for every dimension `n = m + 1 ≥ 2`:
 
-* **Effective end conditions** (paper, Theorem 2.2). For a thin convex domain `Ω_R` — a cylinder
+* **Effective end conditions** (paper, Theorem 1.3). For a thin convex domain `Ω_R` — a cylinder
   of radius `R` and axial span `L` closed by two admissible end caps scaled by `R` — the Robin
   eigenvalues satisfy `|λ_j(Ω_R; α) − ν_R − μ_j(β(C₋), β(C₊); L)| ≤ C_J R`, where
   `ν_R = λ₁(B_m(R); α)` and `β(C) = α (ℋ^m(Γ) − m|C|) / ω_m`.
-* **Sharp cap inequality** (paper, Theorem 3.1). `ℋ^m(Γ) − m|C| ≥ ω_{m+1}/2` for every admissible
+* **Sharp cap inequality** (paper, Theorem 1.4). `ℋ^m(Γ) − m|C| ≥ ω_{m+1}/2` for every admissible
   cap, with equality exactly for the unit hemisphere (possibly extended by a unit cylinder).
-* **Counterexample to the Robin gap conjecture** (paper, Corollary 8.1). For every `α > 0`, thin
+* **Counterexample to the Robin gap conjecture** (paper, Theorem 1.2). For every `α > 0`, thin
   capsules of diameter `L` have `λ₂ − λ₁ < G_α(L)`, the gap of the interval of length `L`.
 
 ## Where to look
 
 | Paper | Lean declaration | File |
 |---|---|---|
-| Theorem 2.2 (every pair of caps) | `RobinCaps.mainTheorem_general_top` | `RobinCaps/ThinDomain/MainGeneralFinal.lean` |
-| Theorem 3.1 | `RobinCaps.sharp_cap_inequality_final_top`, `RobinCaps.equality_iff_final_top` | `RobinCaps/Final.lean` |
-| Corollary 8.1 | `RobinCaps.counterexample_hemisphere_top` | `RobinCaps/Final.lean` |
+| Theorem 1.3 (every pair of caps) | `RobinCaps.mainTheorem_general_top` | `RobinCaps/ThinDomain/MainGeneralFinal.lean` |
+| Theorem 1.4 | `RobinCaps.sharp_cap_inequality_final_top`, `RobinCaps.equality_iff_final_top` | `RobinCaps/Final.lean` |
+| Theorem 1.2 | `RobinCaps.counterexample_hemisphere_top` | `RobinCaps/Final.lean` |
 | Section 8.2 (any cap with `β(C) < α`; caps close to a flat end) | `RobinCaps.counterexample_of_beta_lt_top`, `RobinCaps.counterexample_perturbedFlat_top`, `RobinCaps.counterexample_nearFlat_top` | `RobinCaps/ThinDomain/CounterexampleNearFlat.lean` |
 | Proposition 4.2 (interval gap monotone) | `RobinCaps.Interval.gap_strictMonoOn` | `RobinCaps/Interval/` |
 | min–max values (2.2) are attained by `L²`-orthonormal weak Robin eigenfunctions in `H¹(Ω_R)` (every `j`; `j = 2` separately) | `RobinCaps.robin_eigenfunctions_top`, `RobinCaps.robin_eigenfunctions_two_top` | `RobinCaps/ThinDomain/EigenFinal.lean` |
@@ -53,6 +53,10 @@ kernel.
 | Robin eigenvalue `λ_j(Ω_R; α)` (min–max) | `lambdaThin`, `lambdaPQ`, `Spectrum.minmax` | `RobinCaps/ThinDomain/Eigen.lean`, `H1PQuotient.lean`, `Spectrum/FormEngine.lean` |
 | standard Hausdorff measure `ℋ^m` | `Hausdorff.stdHausdorff` (and `Hausdorff.hConst`) | `RobinCaps/Hausdorff/Wave13Final.lean`, `AreaIface.lean` |
 | Robin Laplacian on `L²(Ω_R)` | `ThinDomain.robinOp_rlp`, `robinDomain_rlp`, `IsRobinImage_rop` | `RobinCaps/ThinDomain/RobinLinearPMap.lean`, `RobinOperator.lean` |
+| unit hemisphere cap, flat cap | `Cap.hemisphere`, `Cap.flat` | `RobinCaps/Cap/Sharp.lean`, `RobinCaps/Cap/Basic.lean` |
+| `ω_k = |B_k(1)|` | `omega` | `RobinCaps/Cap/Basic.lean` |
+| equality profile of the cap inequality (hemisphere, optionally extended by a cylinder) | `Cap.EqualityProfile` | `RobinCaps/Cap/SharpInequality.lean` |
+| gap margin `Δ = G_α(L) − G_{β₀}(L)` of the counterexample | `Domain.Delta` | `RobinCaps/Domain/Corollary.lean` |
 | `ν_R = λ₁(B_m(R); α)` | `nuBall`, `Compact.lam1`, `Compact.bdR` | `RobinCaps/ThinDomain/NuBall.lean`, `Compact/` |
 | statement of the asymptotics | `MainTheorem` | `RobinCaps/ThinDomain/Eigen.lean` |
 | interval eigenvalues and gap | `Interval.mu`, `Interval.gap` | `RobinCaps/Interval/` |
@@ -86,7 +90,7 @@ additional axioms and no `native_decide`.
 ## How it was produced
 
 The formal proofs were written largely by large-language-model coding agents (Anthropic's
-Claude models). Their correctness rests only on the Lean kernel and the axiom check above. Some
+Claude models). Their correctness rests on the Lean kernel and the axiom check above; what the kernel does not check is whether the formal definitions express the intended mathematics, which is why they are listed in the table above. Some
 directories contain development notes (`*.md`) written during the project.
 
 ## License

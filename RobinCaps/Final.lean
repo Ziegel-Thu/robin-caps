@@ -11,8 +11,9 @@ set_option linter.unusedVariables false
 /-!
 # Summary of headline theorems
 
-This file re-exports the project's headline theorems, with names suffixed `_final` and
-manuscript references:
+This file re-exports the project's headline theorems, with names suffixed `_final`/`_top`. The
+manuscript numbering used in docstrings below refers to the arXiv version of the paper:
+`thm:calibration` = Theorem 1.4, `thm:main` = Theorem 1.3, `cor:counterexample` = Theorem 1.2.
 
 1. `RobinCaps/Cap/Main.lean` — the sharp geometric inequality for end-caps (`thm:calibration`)
 2. `RobinCaps/ThinDomain/MainOneFinal.lean` — main result for `m = 1` with hemispherical caps

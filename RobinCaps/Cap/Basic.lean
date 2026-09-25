@@ -135,7 +135,7 @@ under which e.g. the unit semicircle (`m = 1`) has `μH[1]`-length `2√2 ≠ π
 The former definition `hausdorffMeasure m Γ` was therefore **not** the
 manuscript's `ℋ^m(Γ)` (it even violated the sharp inequality for the
 hemisphere), and the bridge `F = revolutionF` recorded earlier was false.
-No theorem in this project uses `hausdorffMeasure`. -/
+The identification of this formula with the integral against the (normalised) Hausdorff measure is proved in `RobinCaps/Hausdorff/Wave13Final.lean` (`boundaryIntegral_eq_stdHausdorff_top`); earlier development stages did not use `hausdorffMeasure`. -/
 noncomputable def F (C : Cap m) : ℝ := C.revolutionF
 
 theorem F_eq_revolutionF (C : Cap m) : C.F = C.revolutionF := rfl

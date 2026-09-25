@@ -309,6 +309,8 @@ import RobinCaps
 #print axioms RobinCaps.Cap.linearization_bound_lip_pf
 #print axioms RobinCaps.Cap.perturbedFlat_beta_lt_pf
 #print axioms RobinCaps.counterexample_perturbedFlat_top
+#print axioms RobinCaps.Compact.gap_of_small
+#print axioms RobinCaps.Cap.capsule_surface_volume_ratio
 #print axioms RobinCaps.Compact.smoothConvSetEst_ses
 #print axioms RobinCaps.Compact.smoothDilateSetEst_ses
 #print axioms RobinCaps.Compact.approxEstimateCvx_acx
