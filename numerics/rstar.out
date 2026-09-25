@@ -1,0 +1,4 @@
+n=2 alpha=  1.0  R_*=0.0416  (bracket 0.0414,0.0418)  first-order estimate Delta/c=0.0425  c=9.306
+n=2 alpha=  4.0  R_*=0.0880  (bracket 0.0879,0.0882)  first-order estimate Delta/c=0.0909  c=12.229
+n=2 alpha= 16.0  R_*=0.0560  (bracket 0.0559,0.0562)  first-order estimate Delta/c=0.0549  c=21.423
+n=3 alpha=  4.0  R_*=0.0926  (bracket 0.0924,0.0928)  first-order estimate Delta/c=0.0991  c=18.049
