@@ -176,3 +176,10 @@ import RobinCaps.ThinDomain.H1PComplete
 import RobinCaps.ThinDomain.H1PQInfDim
 import RobinCaps.ThinDomain.EigenThin
 import RobinCaps.ThinDomain.EigenFinal
+import RobinCaps.ThinDomain.RobinOperator
+import RobinCaps.Spectrum.WeakSpectrum
+import RobinCaps.ThinDomain.RobinSpectrumFinal
+import RobinCaps.Hausdorff.AreaIface
+import RobinCaps.Hausdorff.LinearImage
+import RobinCaps.Hausdorff.NearLinear
+import RobinCaps.Hausdorff.SphereIface

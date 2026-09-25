@@ -327,6 +327,19 @@ import RobinCaps
 #print axioms RobinCaps.rellich_thinDomain_top
 #print axioms RobinCaps.robin_eigenfunctions_top
 #print axioms RobinCaps.robin_eigenfunctions_two_top
+#print axioms RobinCaps.ThinDomain.isRobinImage_unique_rop
+#print axioms RobinCaps.ThinDomain.isRobinImage_symm_rop
+#print axioms RobinCaps.ThinDomain.isRobinImage_eigen_iff_rop
+#print axioms RobinCaps.ThinDomain.eigen_quotient_rop
+#print axioms RobinCaps.Spectrum.weakEigen_eq_minmax_wsp
+#print axioms RobinCaps.Spectrum.minmax_isWeakEigen_wsp
+#print axioms RobinCaps.Spectrum.minmax_tendsto_atTop_wsp
+#print axioms RobinCaps.lambdaThin_tendsto_top
+#print axioms RobinCaps.robin_weakEigen_top
+#print axioms RobinCaps.robin_operator_spectrum_top
+#print axioms RobinCaps.Hausdorff.hausdorffVolume_hlin
+#print axioms RobinCaps.Hausdorff.linearImage_hlin
+#print axioms RobinCaps.Hausdorff.nearLinear_hnl
 EOF
 lake env lean .axiomcheck.lean
 rm -f .axiomcheck.lean

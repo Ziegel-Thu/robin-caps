@@ -27,6 +27,7 @@ The main results, all proved in Lean for every dimension `n = m + 1 ≥ 2`:
 | Proposition 4.2 (interval gap monotone) | `RobinCaps.Interval.gap_strictMonoOn` | `RobinCaps/Interval/` |
 | min–max values (2.2) are attained by `L²`-orthonormal weak Robin eigenfunctions in `H¹(Ω_R)` (every `j`; `j = 2` separately) | `RobinCaps.robin_eigenfunctions_top`, `RobinCaps.robin_eigenfunctions_two_top` | `RobinCaps/ThinDomain/EigenFinal.lean` |
 | Rellich–Kondrachov: `H¹(Ω_R) ↪ L²(Ω_R)` compact (also on every bounded convex open set) | `RobinCaps.rellich_thinDomain_top`, `RobinCaps.Compact.rellich_convex_final` | `RobinCaps/ThinDomain/EigenFinal.lean` |
+| the weak Robin eigenvalues, and the eigenvalues of the Robin operator (weak form), are exactly the min–max values; `λ_j → ∞` | `RobinCaps.robin_weakEigen_top`, `RobinCaps.robin_operator_spectrum_top`, `RobinCaps.lambdaThin_tendsto_top` | `RobinCaps/ThinDomain/RobinSpectrumFinal.lean` |
 
 `RobinCaps/Final.lean` collects the headline statements with references to the paper.
 
