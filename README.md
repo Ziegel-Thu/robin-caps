@@ -25,6 +25,8 @@ The main results, all proved in Lean for every dimension `n = m + 1 ≥ 2`:
 | Corollary 8.1 | `RobinCaps.counterexample_hemisphere_top` | `RobinCaps/Final.lean` |
 | Section 9.3 (any cap with `β(C) < α`; caps close to a flat end) | `RobinCaps.counterexample_of_beta_lt_top`, `RobinCaps.counterexample_perturbedFlat_top`, `RobinCaps.counterexample_nearFlat_top` | `RobinCaps/ThinDomain/CounterexampleNearFlat.lean` |
 | Proposition 4.2 (interval gap monotone) | `RobinCaps.Interval.gap_strictMonoOn` | `RobinCaps/Interval/` |
+| min–max values (2.2) are attained by `L²`-orthonormal weak Robin eigenfunctions in `H¹(Ω_R)` (every `j`; `j = 2` separately) | `RobinCaps.robin_eigenfunctions_top`, `RobinCaps.robin_eigenfunctions_two_top` | `RobinCaps/ThinDomain/EigenFinal.lean` |
+| Rellich–Kondrachov: `H¹(Ω_R) ↪ L²(Ω_R)` compact (also on every bounded convex open set) | `RobinCaps.rellich_thinDomain_top`, `RobinCaps.Compact.rellich_convex_final` | `RobinCaps/ThinDomain/EigenFinal.lean` |
 
 `RobinCaps/Final.lean` collects the headline statements with references to the paper.
 

@@ -309,6 +309,24 @@ import RobinCaps
 #print axioms RobinCaps.Cap.linearization_bound_lip_pf
 #print axioms RobinCaps.Cap.perturbedFlat_beta_lt_pf
 #print axioms RobinCaps.counterexample_perturbedFlat_top
+#print axioms RobinCaps.Compact.smoothConvSetEst_ses
+#print axioms RobinCaps.Compact.smoothDilateSetEst_ses
+#print axioms RobinCaps.Compact.approxEstimateCvx_acx
+#print axioms RobinCaps.Compact.rellichL2_convex_rcx
+#print axioms RobinCaps.Compact.rellichL2_convex_final
+#print axioms RobinCaps.Compact.rellich_convex_final
+#print axioms RobinCaps.ThinDomain.rellichP_thin_rth
+#print axioms RobinCaps.ThinDomain.h1pComplete_h1c
+#print axioms RobinCaps.ThinDomain.exists_finrank_H1PQ_inf
+#print axioms RobinCaps.Spectrum.constrainedMin_cmin
+#print axioms RobinCaps.Spectrum.eigenFamily_efam
+#print axioms RobinCaps.ThinDomain.exists_eigenfunctions_eth
+#print axioms RobinCaps.ThinDomain.minmax_robinSetting_eth
+#print axioms RobinCaps.ThinDomain.rellichP_thinDomain_final
+#print axioms RobinCaps.ThinDomain.exists_robin_eigenfunctions_final
+#print axioms RobinCaps.rellich_thinDomain_top
+#print axioms RobinCaps.robin_eigenfunctions_top
+#print axioms RobinCaps.robin_eigenfunctions_two_top
 EOF
 lake env lean .axiomcheck.lean
 rm -f .axiomcheck.lean

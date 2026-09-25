@@ -163,3 +163,16 @@ import RobinCaps.Cap.Frustum
 import RobinCaps.Cap.PerturbedFlat
 import RobinCaps.ThinDomain.CounterexampleGeneral
 import RobinCaps.ThinDomain.CounterexampleNearFlat
+import RobinCaps.Spectrum.CompactForm
+import RobinCaps.Spectrum.ConstrainedMin
+import RobinCaps.Spectrum.EigenFamily
+import RobinCaps.Compact.ConvexRellichIface
+import RobinCaps.Compact.SmoothEstimatesSet
+import RobinCaps.Compact.ApproxConvex
+import RobinCaps.Compact.RellichConvex
+import RobinCaps.ThinDomain.EigenIface
+import RobinCaps.ThinDomain.RellichThin
+import RobinCaps.ThinDomain.H1PComplete
+import RobinCaps.ThinDomain.H1PQInfDim
+import RobinCaps.ThinDomain.EigenThin
+import RobinCaps.ThinDomain.EigenFinal
