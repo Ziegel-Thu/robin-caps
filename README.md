@@ -2,8 +2,11 @@
 
 A Lean 4 / mathlib formalization of the paper
 
-> Shurui Zheng, *A counterexample to the Robin
-> spectral gap conjecture* (arXiv link to be added).
+> Shurui Zheng, *Counterexamples to the Robin spectral gap conjecture in every dimension*.
+
+[Read the paper (PDF)](paper/robin_endcaps.pdf) · [LaTeX source](paper/robin_endcaps.tex) · [Build instructions](paper/README.md)
+
+The manuscript is dated 16 November 2026 and discusses Colbrook’s related three-dimensional construction.
 
 The main results, all proved in Lean for every dimension `n = m + 1 ≥ 2`:
 
